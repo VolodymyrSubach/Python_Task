@@ -1,0 +1,17 @@
+{% include 'base.html' %}
+
+{% block title %}
+    Create menu
+{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {%  csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" class="btn btn-outline-primary btn-sm" value="Create">
+        <a class="btn btn-outline-secondary btn-sm" href="{% url 'menu:list' %}">Cancel</a>
+    </form>
+
+
+{% endblock %}

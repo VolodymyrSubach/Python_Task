@@ -1,0 +1,16 @@
+{% include 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {%  csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" class="btn btn-outline-primary btn-sm" value="Create">
+        <a class="btn btn-outline-secondary btn-sm" href="{% url 'restaurant:list' %}">Cancel</a>
+    </form>
+
+
+{% endblock %}
